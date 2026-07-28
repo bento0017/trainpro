@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TrainPro — o sistema do teu ginásio</title>
+<meta name="description" content="TrainPro gere sócios, mensalidades, aulas, treinos e o controlo de acessos do teu ginásio ou do teu negócio de personal trainer. A porta só abre para quem está em dia.">
+
+<meta property="og:title" content="TrainPro — o sistema do teu ginásio">
+<meta property="og:description" content="Sócios, mensalidades, aulas, treinos e controlo de acessos numa só app. A porta só abre para quem está em dia.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_PT">
+<meta name="theme-color" content="#14161A">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Manrope:wght@400..800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%2314161A'/><rect x='18' y='30' width='64' height='12' fill='%23FFD400'/><rect x='18' y='58' width='40' height='12' fill='%23EFF0ED'/></svg>">
+</head>
+<script>document.documentElement.classList.add("js");</script>
+<body>
+
+<a class="skip" href="#conteudo">Saltar para o conteúdo</a>
+
+<header class="site-head">
+  <div class="wrap site-head__inner">
+    <a class="mark" href="#topo"><span class="mark__dot" aria-hidden="true"></span>TrainPro</a>
+    <nav class="site-nav" aria-label="Navegação principal">
+      <a href="#funciona">O que faz</a>
+      <a href="#vende">O que vendes</a>
+      <a href="#precos">Preços</a>
+      <a href="#arranque">Arranque</a>
+      <a class="btn btn--solid" href="#precos">Ver planos</a>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<!-- ====================================================== hero + painel -->
+<section class="hero" id="topo">
+  <div class="wrap hero__grid">
+
+    <div>
+      <p class="eyebrow">Software de gestão para ginásios e personal trainers</p>
+      <h1 class="hero__title">
+        A porta só abre
+        <em>para quem está em dia.</em>
+      </h1>
+      <p class="lede">
+        O TrainPro trata dos sócios, das mensalidades, das aulas e dos treinos.
+        E liga tudo isso à entrada: quem não tem a mensalidade paga não passa,
+        sem ninguém ter de conferir nada ao balcão.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--solid" href="#precos">Ver planos e preços</a>
+        <a class="btn btn--ghost" href="#funciona">O que faz, ao certo</a>
+      </div>
+      <p class="hero__note">Sem período experimental · Cancelas quando quiseres · A partir de 60&nbsp;€/mês</p>
+    </div>
+
+    <!-- ★ Elemento assinatura: o leitor de entrada a decidir, ao vivo. -->
+    <div class="reader" id="reader" data-state="granted" role="figure"
+         aria-label="Simulação do leitor de entrada do ginásio a validar sócios">
+      <div class="reader__top">
+        <span>Entrada principal</span>
+        <span class="reader__lamp"><span aria-hidden="true"></span><em id="readerClock" style="font-style:normal">07:42</em></span>
+      </div>
+
+      <div class="reader__screen">
+        <div class="reader__member">
+          <p class="reader__plan" id="readerPlan">Mensalidade 6 meses · válida até 12 dez</p>
+          <p class="reader__name" id="readerName">Marta Sousa</p>
+        </div>
+
+        <div class="reader__verdict">
+          <p class="reader__word" id="readerWord">Acesso permitido</p>
+          <p class="reader__reason" id="readerReason">Pagamento em dia. Torniquete aberto.</p>
+        </div>
+      </div>
+
+      <div class="reader__tick" aria-hidden="true"><i></i></div>
+
+      <div class="reader__foot">
+        <span>QR assinado</span>
+        <span id="readerCount">Hoje: 38 entradas</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================================================= o que sai -->
+<section class="section section--ink">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="eyebrow">O que deixas de usar</p>
+      <h2 class="section__title">Um ginásio não devia precisar de quatro sítios para saber quem pagou.</h2>
+      <p class="lede">Hoje a informação anda espalhada. Cada sítio tem uma parte da verdade e nenhum tem a verdade toda.</p>
+    </div>
+
+    <div class="replace reveal">
+      <div class="replace__item">
+        <p class="replace__tool">Folha de Excel</p>
+        <p class="replace__what">Sócios, mensalidades e datas de renovação, atualizados à mão quando alguém se lembra.</p>
+      </div>
+      <div class="replace__item">
+        <p class="replace__tool">Caderno da recepção</p>
+        <p class="replace__what">Quem entrou, quem trouxe convidado, quem ficou a dever a senha.</p>
+      </div>
+      <div class="replace__item">
+        <p class="replace__tool">Grupos de WhatsApp</p>
+        <p class="replace__what">Marcações de aulas, avisos de horário e planos de treino em PDF perdidos no meio da conversa.</p>
+      </div>
+      <div class="replace__item">
+        <p class="replace__tool">Cartões de plástico</p>
+        <p class="replace__what">Que se perdem, se emprestam e não sabem se a mensalidade está paga.</p>
+      </div>
+    </div>
+
+    <p class="replace__out reveal">Passa a ser <b>uma app para ti</b> e <b>uma app para os teus sócios</b>. A mesma informação dos dois lados, sempre.</p>
+  </div>
+</section>
+
+<!-- ======================================================== audiências -->
+<section class="section section--slab">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="eyebrow">Para quem é</p>
+      <h2 class="section__title">Dois negócios diferentes, com necessidades diferentes.</h2>
+      <p class="lede">A escada de planos não é a mesma, porque o trabalho não é o mesmo.</p>
+    </div>
+
+    <div class="tracks">
+      <article class="track reveal">
+        <p class="track__tag">Ginásio</p>
+        <h3 class="track__title">Tens um espaço, uma equipa e sócios.</h3>
+        <ul class="track__list">
+          <li>Inscrições, mensalidades e histórico de cada sócio, atualizados sozinhos</li>
+          <li>Entrada por QR assinado, ligada ao estado do pagamento</li>
+          <li>Aulas de grupo com horários, limites de sala e marcações</li>
+          <li>Equipa com permissões: recepção, treinadores, direção</li>
+          <li>Receita, assiduidade e desistências à vista antes de virarem problema</li>
+        </ul>
+        <p class="track__price"><b>Desde 100&nbsp;€/mês</b>Três degraus, até sócios sem limite e vários espaços na mesma conta.</p>
+        <a class="btn btn--ghost" href="#precos-ginasio">Planos para ginásios</a>
+      </article>
+
+      <article class="track reveal">
+        <p class="track__tag">PT independente</p>
+        <h3 class="track__title">Trabalhas por conta própria, com os teus alunos.</h3>
+        <ul class="track__list">
+          <li>Planos de treino a partir de templates, no telemóvel do aluno</li>
+          <li>Planos alimentares com PDF pronto a entregar</li>
+          <li>Mensalidades e pacotes de sessões com aviso de quem está em atraso</li>
+          <li>Agenda e marcações sem trocas de mensagens</li>
+          <li>A app mostra o teu nome e os teus planos, não os de um ginásio</li>
+        </ul>
+        <p class="track__price"><b>Desde 60&nbsp;€/mês</b>Três degraus, até alunos sem limite e espaço próprio com controlo de acessos.</p>
+        <a class="btn btn--ghost" href="#precos-pt">Planos para PTs</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================== o que faz -->
+<section class="section" id="funciona">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="eyebrow">O que faz</p>
+      <h2 class="section__title">Do momento em que alguém se inscreve ao momento em que empurra o torniquete.</h2>
+    </div>
+
+    <div class="bento">
+
+      <article class="cell cell--hero reveal">
+        <p class="cell__kicker">Controlo de acessos</p>
+        <h3 class="cell__title">O QR que decide na porta</h3>
+        <p class="cell__body">
+          Cada sócio tem um código assinado no telemóvel, que muda e não se copia.
+          O leitor confirma três coisas antes de abrir: se é mesmo dele, se está
+          dentro da validade e se a mensalidade está paga. Uma mensalidade que
+          venceu fecha a porta sozinha — ninguém tem de ter a conversa difícil ao balcão.
+        </p>
+      </article>
+
+      <article class="cell cell--mark reveal">
+        <p class="cell__kicker">Sócios</p>
+        <h3 class="cell__title">Mensalidades sem papelada</h3>
+        <p class="cell__body">Inscrição, renovação, extras e histórico. Sabes sempre quem está em dia e quem não está.</p>
+      </article>
+
+      <article class="cell reveal">
+        <p class="cell__kicker">Aulas</p>
+        <h3 class="cell__title">Horários e marcações</h3>
+        <p class="cell__body">Calendário, limite de sala, inscrições e lista de espera. O sócio marca na app dele.</p>
+      </article>
+
+      <article class="cell cell--four reveal">
+        <p class="cell__kicker">Treino</p>
+        <h3 class="cell__title">Planos que o aluno consegue seguir</h3>
+        <p class="cell__body">
+          Monta o plano a partir de templates ou de raiz, com séries, cargas e
+          notas. O aluno abre no telemóvel, regista o que fez, e tu vês a
+          evolução sem perguntar.
+        </p>
+      </article>
+
+      <article class="cell cell--wide reveal">
+        <p class="cell__kicker">Nutrição</p>
+        <h3 class="cell__title">Plano alimentar e macros</h3>
+        <p class="cell__body">
+          Registo de refeições com base de dados de alimentos, objetivos de
+          calorias e macros, e plano em PDF pronto a entregar ao aluno.
+        </p>
+      </article>
+
+      <article class="cell cell--wide reveal">
+        <p class="cell__kicker">Equipa</p>
+        <h3 class="cell__title">Cada um vê o que lhe toca</h3>
+        <p class="cell__body">Recepção, treinadores e direção com permissões separadas.</p>
+      </article>
+
+      <article class="cell cell--wide reveal">
+        <p class="cell__kicker">Loja</p>
+        <h3 class="cell__title">Produtos e encomendas</h3>
+        <p class="cell__body">Suplementos, bebidas e material vendidos dentro da app, com histórico.</p>
+      </article>
+
+      <article class="cell cell--wide reveal">
+        <p class="cell__kicker">Números</p>
+        <h3 class="cell__title">Receita e assiduidade</h3>
+        <p class="cell__body">Quanto entrou, quem deixou de aparecer, quem está prestes a sair.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= o que vendes -->
+<section class="section section--slab" id="vende">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="eyebrow">O que passas a vender pela app</p>
+      <h2 class="section__title">O dinheiro entra onde os teus sócios já estão.</h2>
+      <p class="lede">
+        Os preços são teus e defines-os no painel. O TrainPro trata da cobrança,
+        do recibo e de manter o acesso coerente com o pagamento.
+      </p>
+    </div>
+
+    <div class="sells reveal">
+      <div class="sell">
+        <p class="sell__name">Mensalidades</p>
+        <p class="sell__body">Planos de 1, 6 ou 12 meses, com extras opcionais como toalha ou fins de semana.</p>
+      </div>
+      <div class="sell">
+        <p class="sell__name">Senhas avulsas</p>
+        <p class="sell__body">Entrada simples ou dupla, sauna, aula de pilates. Compradas na app, validadas na porta.</p>
+      </div>
+      <div class="sell">
+        <p class="sell__name">Aulas de grupo</p>
+        <p class="sell__body">Inscrição paga ou incluída no plano, com limite de lugares por sala.</p>
+      </div>
+      <div class="sell">
+        <p class="sell__name">Sessões de PT</p>
+        <p class="sell__body">Sessões individuais e pacotes, com agenda e marcação pelo próprio aluno.</p>
+      </div>
+      <div class="sell">
+        <p class="sell__name">Day pass de visitante</p>
+        <p class="sell__body">Entrada de um dia com caução reservada no cartão e devolvida à saída.</p>
+      </div>
+      <div class="sell">
+        <p class="sell__name">Loja</p>
+        <p class="sell__body">Suplementos, bebidas e material, com encomenda e levantamento ao balcão.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= preços -->
+<section class="section" id="precos">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="eyebrow">Preços</p>
+      <h2 class="section__title">Pagas por mês. Ou pagas o ano e poupas.</h2>
+      <p class="lede">Sem período experimental e sem contrato de fidelização. Cancelas quando quiseres e o plano fica ativo até ao fim do ciclo já pago.</p>
+    </div>
+
+    <div class="switch reveal" role="group" aria-label="Ciclo de pagamento">
+      <button type="button" id="cycleMonthly" aria-pressed="true">Mensal</button>
+      <button type="button" id="cycleAnnual" aria-pressed="false">Anual</button>
+    </div>
+
+    <!-- Ginásios -->
+    <div class="audience-head reveal" id="precos-ginasio">
+      <h3>Ginásios</h3>
+      <span data-offer="gym">2 meses grátis no anual</span>
+    </div>
+
+    <div class="plans">
+      <article class="plan reveal">
+        <h4 class="plan__name">Essencial</h4>
+        <p class="plan__for">Ginásio de bairro a arrancar</p>
+        <p class="plan__price" data-monthly="100 €" data-annual="1000 €">100 €</p>
+        <p class="plan__cycle" data-cycle>por mês</p>
+        <p class="plan__save" data-save data-annual-save="Poupas 200 € por ano"></p>
+        <ul class="plan__list">
+          <li>Até 150 sócios</li>
+          <li>3 membros de equipa</li>
+          <li>Controlo de acessos por QR</li>
+          <li>Mensalidades e recibos</li>
+        </ul>
+        <a class="btn btn--ghost" href="#falar">Começar</a>
+      </article>
+
+      <article class="plan plan--pick reveal">
+        <p class="plan__flag">Mais escolhido</p>
+        <h4 class="plan__name">Pro</h4>
+        <p class="plan__for">Ginásio com aulas e equipa fixa</p>
+        <p class="plan__price" data-monthly="180 €" data-annual="1800 €">180 €</p>
+        <p class="plan__cycle" data-cycle>por mês</p>
+        <p class="plan__save" data-save data-annual-save="Poupas 360 € por ano"></p>
+        <ul class="plan__list">
+          <li>Até 500 sócios</li>
+          <li>Equipa sem limite</li>
+          <li>Aulas de grupo e marcações</li>
+          <li>Planos de treino e nutrição</li>
+          <li>Relatórios de receita e assiduidade</li>
+        </ul>
+        <a class="btn btn--solid" href="#falar">Começar</a>
+      </article>
+
+      <article class="plan reveal">
+        <h4 class="plan__name">Elite</h4>
+        <p class="plan__for">Vários espaços ou franchising</p>
+        <p class="plan__price" data-monthly="300 €" data-annual="3000 €">300 €</p>
+        <p class="plan__cycle" data-cycle>por mês</p>
+        <p class="plan__save" data-save data-annual-save="Poupas 600 € por ano"></p>
+        <ul class="plan__list">
+          <li>Sócios sem limite</li>
+          <li>Vários espaços na mesma conta</li>
+          <li>Loja e pacotes de sessões</li>
+          <li>Apoio prioritário</li>
+        </ul>
+        <a class="btn btn--ghost" href="#falar">Começar</a>
+      </article>
+    </div>
+
+    <!-- Personal trainers -->
+    <div class="audience-head reveal" id="precos-pt">
+      <h3>Personal trainers independentes</h3>
+      <span data-offer="trainer">Menos 30% no anual</span>
+    </div>
+
+    <div class="plans">
+      <article class="plan reveal">
+        <h4 class="plan__name">Solo</h4>
+        <p class="plan__for">Começar por conta própria</p>
+        <p class="plan__price" data-monthly="60 €" data-annual="504 €">60 €</p>
+        <p class="plan__cycle" data-cycle>por mês</p>
+        <p class="plan__save" data-save data-annual-save="Poupas 216 € por ano"></p>
+        <ul class="plan__list">
+          <li>Até 25 alunos</li>
+          <li>Planos de treino e nutrição</li>
+          <li>Cobrança de mensalidades</li>
+          <li>App para os teus alunos</li>
+        </ul>
+        <a class="btn btn--ghost" href="#falar">Começar</a>
+      </article>
+
+      <article class="plan plan--pick reveal">
+        <p class="plan__flag">Mais escolhido</p>
+        <h4 class="plan__name">Plus</h4>
+        <p class="plan__for">Agenda cheia, a maior parte do tempo</p>
+        <p class="plan__price" data-monthly="95 €" data-annual="798 €">95 €</p>
+        <p class="plan__cycle" data-cycle>por mês</p>
+        <p class="plan__save" data-save data-annual-save="Poupas 342 € por ano"></p>
+        <ul class="plan__list">
+          <li>Até 75 alunos</li>
+          <li>Marcações e agenda</li>
+          <li>Pacotes de sessões</li>
+          <li>Relatórios de evolução</li>
+        </ul>
+        <a class="btn btn--solid" href="#falar">Começar</a>
+      </article>
+
+      <article class="plan reveal">
+        <h4 class="plan__name">Studio</h4>
+        <p class="plan__for">Espaço próprio ou equipa pequena</p>
+        <p class="plan__price" data-monthly="140 €" data-annual="1176 €">140 €</p>
+        <p class="plan__cycle" data-cycle>por mês</p>
+        <p class="plan__save" data-save data-annual-save="Poupas 504 € por ano"></p>
+        <ul class="plan__list">
+          <li>Alunos sem limite</li>
+          <li>Até 3 treinadores</li>
+          <li>Controlo de acessos por QR</li>
+          <li>Loja e apoio prioritário</li>
+        </ul>
+        <a class="btn btn--ghost" href="#falar">Começar</a>
+      </article>
+    </div>
+
+    <div class="custom reveal">
+      <div>
+        <h3>Nenhum destes serve?</h3>
+        <p>Fazemos um plano à medida do teu espaço, com o número de sócios e as funcionalidades que precisas.</p>
+      </div>
+      <a class="btn btn--ghost" href="mailto:contacttrainproapp@gmail.com?subject=Plano%20personalizado">Falar connosco</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================== arranque -->
+<section class="section section--ink" id="arranque">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="eyebrow">Como arranca</p>
+      <h2 class="section__title">Do primeiro contacto à primeira entrada validada.</h2>
+      <p class="lede">A ordem importa: cada passo depende do anterior estar feito.</p>
+    </div>
+
+    <div class="steps reveal">
+      <div class="step">
+        <div>
+          <h3>Escolhes o plano e crias a conta</h3>
+          <p>Pagamento no fim do processo. A conta fica ativa mal o pagamento passe.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <h3>Configuras o espaço</h3>
+          <p>Nome, morada, NIF para os recibos, horários, salas e que serviços ficam visíveis aos sócios.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <h3>Trazes os sócios</h3>
+          <p>Cada sócio entra por convite ou por código do ginásio, cria a conta e fica ligado ao teu espaço.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <h3>Abres a porta</h3>
+          <p>O leitor de entrada corre num telemóvel ou tablet na recepção. A partir daí valida sozinho.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ faq -->
+<section class="section">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="eyebrow">Perguntas</p>
+      <h2 class="section__title">O que costumam perguntar antes de assinar.</h2>
+    </div>
+
+    <div class="faq reveal">
+      <details>
+        <summary>Preciso de comprar torniquetes ou leitores?</summary>
+        <p>Não. O leitor de entrada é um ecrã da própria app, a correr num telemóvel ou tablet na recepção. Se já tens torniquete, continua a fazer sentido usá-lo — o TrainPro é quem decide se abre.</p>
+      </details>
+      <details>
+        <summary>O que acontece a quem tem a mensalidade em atraso?</summary>
+        <p>O código deixa de validar na porta e a pessoa vê o motivo na app dela, com a opção de regularizar. Podes definir uma tolerância se preferires que ninguém fique à porta no primeiro dia de atraso.</p>
+      </details>
+      <details>
+        <summary>Os meus sócios têm de pagar alguma coisa pela app?</summary>
+        <p>Não. A app dos sócios é gratuita para eles. O que pagam é o que tu lhes vendes: mensalidade, senhas, aulas, sessões.</p>
+      </details>
+      <details>
+        <summary>Sou PT e não tenho ginásio. Isto serve-me?</summary>
+        <p>Serve. Os planos para PT independente não pressupõem espaço físico: dás treinos e nutrição, cobras mensalidades e pacotes, e os teus alunos veem o teu nome na app. Se tiveres espaço próprio, o plano Studio traz também o controlo de acessos.</p>
+      </details>
+      <details>
+        <summary>E se eu quiser sair?</summary>
+        <p>Cancelas quando quiseres, sem fidelização. O plano fica ativo até ao fim do ciclo que já pagaste e os dados do teu espaço continuam a ser teus — pedes uma exportação e levamos isso a sério.</p>
+      </details>
+      <details>
+        <summary>Está pronto a usar hoje?</summary>
+        <p>A app está em desenvolvimento ativo e as funcionalidades descritas aqui são as que existem. Se quiseres experimentar antes de decidir, escreve-nos e combinamos uma demonstração com o teu caso concreto.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ cta -->
+<section class="cta" id="falar">
+  <div class="wrap cta__inner">
+    <h2>Diz-nos como funciona o teu espaço.</h2>
+    <p>Respondemos com o plano que faz sentido para o teu número de sócios — e, se nenhum servir, fazemos um à medida.</p>
+    <a class="btn btn--ink" href="mailto:contacttrainproapp@gmail.com?subject=Ades%C3%A3o%20TrainPro">Escrever-nos</a>
+    <a class="cta__mail" href="mailto:contacttrainproapp@gmail.com">contacttrainproapp@gmail.com</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="site-foot__grid">
+      <a class="mark" href="#topo"><span class="mark__dot" aria-hidden="true"></span>TrainPro</a>
+      <nav class="site-foot__links" aria-label="Navegação do rodapé">
+        <a href="#funciona">O que faz</a>
+        <a href="#vende">O que vendes</a>
+        <a href="#precos">Preços</a>
+        <a href="#arranque">Arranque</a>
+        <a href="mailto:contacttrainproapp@gmail.com">Contacto</a>
+      </nav>
+    </div>
+    <div class="site-foot__legal">
+      <span>TrainPro · Gestão de ginásios e personal trainers · Portugal</span>
+      <span>Preços em euros, sem IVA incluído</span>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
